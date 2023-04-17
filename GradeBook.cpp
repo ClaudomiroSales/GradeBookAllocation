@@ -53,13 +53,13 @@ GradeBook::GradeBook( const GradeBook& other )
 {
     cout << "Construct de copia.\n";
     this->courseName = other.courseName;
-    setNumAlunos( other.numAlunos );
+    this->numAlunos = other.numAlunos;
 
     this->histSize = other.histSize;
     this->nextEntrieInHist = other.nextEntrieInHist;
     this->histPtr = new int[ this->histSize ];
     for( int i = 0; i < nextEntrieInHist; i++ )
-        this->histPtr[ i ] = histPtr[ i ];
+        this->histPtr[ i ] = other.histPtr[ i ];
 
     //this->alunos.resize( other.alunos.size() );
     for( auto i = 0; i < other.alunos.size( ); i++ )
