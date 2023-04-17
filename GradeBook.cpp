@@ -51,7 +51,6 @@ GradeBook::GradeBook( int numAlunos )
 GradeBook::GradeBook( const GradeBook& other )
 :MAXSIZENAME( other.MAXSIZENAME ), check( other.check ), numAlunosCadastrados( 0 )
 {
-    cout << "Construct de copia.\n";
     this->courseName = other.courseName;
     this->numAlunos = other.numAlunos;
 
@@ -64,15 +63,7 @@ GradeBook::GradeBook( const GradeBook& other )
     //this->alunos.resize( other.alunos.size() );
     for( auto i = 0; i < other.alunos.size( ); i++ )
         this->alunos.push_back( new string( *other.alunos[ i ] ) );    
-
-    cout << "Alunos\n";
-    for( auto i = 0; i < other.alunos.size( ); i++ )
-        cout << *other.alunos[ i ] << '\n'; 
-
-    cout << "Alunos 2\n";
-    for( auto i = 0; i < alunos.size( ); i++ )
-        cout << *alunos[ i ] << '\n';    
-   
+        
     numGradeBooks++;
 }
 
